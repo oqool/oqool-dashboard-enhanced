@@ -8,15 +8,15 @@
     transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
-.card:hover,
-.oq-card:hover {
+.card.card-interactive:hover,
+.oq-card.oq-card-interactive:hover {
     transform: translateY(-2px);
     border-color: var(--gray-300);
     box-shadow: var(--shadow-lg);
 }
 
-.card:focus-visible,
-.oq-card:focus-visible {
+.card.card-interactive:focus-visible,
+.oq-card.oq-card-interactive:focus-visible {
     transform: translateY(-2px);
     border-color: var(--gray-300);
     box-shadow: var(--shadow-lg);
