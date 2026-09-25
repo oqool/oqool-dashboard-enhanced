@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OQOOL Dashboard Enhanced</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/enhancements.css">
+</head>
+<body class="oq-app">
+  <div class="oq-dashboard">
+    <aside class="oq-sidebar p-3 p-lg-4">
+      <div class="oq-sidebar-brand d-flex align-items-center justify-content-between mb-4">
+        <div>
+          <span class="oq-eyebrow">OQOOL OS</span>
+          <h1 class="h4 mb-0">لوحة التحكم</h1>
+        </div>
+        <span class="badge text-bg-light">v2</span>
+      </div>
+
+      <nav class="nav flex-column gap-2">
+        <a class="nav-link active" href="#">نظرة عامة</a>
+        <a class="nav-link" href="#">العملاء</a>
+        <a class="nav-link" href="#">التقارير</a>
+        <a class="nav-link" href="#">المالية</a>
+        <a class="nav-link" href="#">الإعدادات</a>
+      </nav>
+
+      <div class="card oq-sidebar-card mt-4 border-0">
+        <div class="card-body">
+          <span class="oq-eyebrow">التنبيه اليومي</span>
+          <p class="mb-3">معدل رضا العملاء ارتفع 12% هذا الأسبوع.</p>
+          <button class="btn btn-primary w-100">عرض التفاصيل</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="oq-main">
+      <header class="top-bar d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <span class="oq-eyebrow">Enterprise SaaS Dashboard</span>
+          <h2 class="h3 mb-0">مرحباً بك مجدداً</h2>
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="oq-search-box">
+            <input class="form-control" type="search" placeholder="ابحث عن عميل أو تقرير">
+          </div>
+          <select class="form-select">
+            <option>آخر 30 يوماً</option>
+            <option>آخر 7 أيام</option>
+            <option>هذا العام</option>
+          </select>
+          <button class="btn btn-outline-secondary">تصدير</button>
+          <button class="btn btn-primary">إضافة جديد</button>
+        </div>
+      </header>
+
+      <section class="container-fluid px-0">
+        <div class="row g-4 mb-4">
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="card oq-kpi-card border-0 h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <p class="oq-kpi-label mb-1">الإيرادات الشهرية</p>
+                    <h3 class="oq-kpi-value mb-0">245K</h3>
+                  </div>
+                  <span class="oq-kpi-icon">₪</span>
+                </div>
+                <p class="oq-kpi-meta mb-0">+18.4% مقارنة بالشهر الماضي</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="card oq-kpi-card border-0 h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <p class="oq-kpi-label mb-1">العملاء النشطون</p>
+                    <h3 class="oq-kpi-value mb-0">1,284</h3>
+                  </div>
+                  <span class="oq-kpi-icon">👥</span>
+                </div>
+                <p class="oq-kpi-meta mb-0">+8.1% خلال آخر أسبوعين</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="card oq-kpi-card border-0 h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <p class="oq-kpi-label mb-1">طلبات الدعم</p>
+                    <h3 class="oq-kpi-value mb-0">36</h3>
+                  </div>
+                  <span class="oq-kpi-icon">🎧</span>
+                </div>
+                <p class="oq-kpi-meta mb-0">انخفضت 14% عن الأسبوع السابق</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="card oq-kpi-card border-0 h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <p class="oq-kpi-label mb-1">معدل التحويل</p>
+                    <h3 class="oq-kpi-value mb-0">24.8%</h3>
+                  </div>
+                  <span class="oq-kpi-icon">↗</span>
+                </div>
+                <p class="oq-kpi-meta mb-0">تحسن مستمر بعد آخر تحديث</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-xl-8">
+            <section class="card border-0 oq-content-card h-100">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                  <div>
+                    <h3 class="h5 mb-1">نظرة تشغيلية</h3>
+                    <p class="text-secondary mb-0">ملخص سريع للأداء والفرق والمبيعات.</p>
+                  </div>
+                  <button class="btn btn-outline-primary">عرض التقرير الكامل</button>
+                </div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">اسم العميل</label>
+                    <input class="form-control" type="text" placeholder="اكتب اسم العميل">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">الحالة</label>
+                    <select class="form-select">
+                      <option>الكل</option>
+                      <option>نشط</option>
+                      <option>معلّق</option>
+                      <option>مغلق</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">ملاحظات الإدارة</label>
+                    <textarea class="form-control" rows="5" placeholder="أضف ملاحظة داخلية أو ملخصاً تنفيذياً"></textarea>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <section class="card border-0 oq-content-card h-100">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3">آخر الأنشطة</h3>
+                <div class="d-flex flex-column gap-3">
+                  <div class="oq-activity-item">
+                    <strong class="d-block">إطلاق تقرير مالي جديد</strong>
+                    <small class="text-secondary">منذ 20 دقيقة</small>
+                  </div>
+                  <div class="oq-activity-item">
+                    <strong class="d-block">إضافة عميل مؤسسي جديد</strong>
+                    <small class="text-secondary">منذ ساعة</small>
+                  </div>
+                  <div class="oq-activity-item">
+                    <strong class="d-block">تحديث صلاحيات فريق المبيعات</strong>
+                    <small class="text-secondary">اليوم 09:30 صباحاً</small>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

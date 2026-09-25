@@ -1,0 +1,107 @@
+:root {
+  --oq-font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --oq-color-bg: #f4f7fb;
+  --oq-color-surface: #ffffff;
+  --oq-color-surface-alt: #f8fbff;
+  --oq-color-text: #152033;
+  --oq-color-text-muted: #6b7a90;
+  --oq-color-border: rgba(18, 38, 63, 0.1);
+  --oq-color-primary: #295cff;
+  --oq-color-primary-strong: #1b46d1;
+  --oq-color-sidebar: #0f172a;
+  --oq-shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --oq-shadow-md: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --oq-radius-md: 16px;
+  --oq-radius-lg: 24px;
+  --oq-space-2: 0.5rem;
+  --oq-space-3: 0.75rem;
+  --oq-space-4: 1rem;
+  --oq-space-5: 1.25rem;
+  --oq-space-6: 1.5rem;
+}
+
+body.oq-app {
+  margin: 0;
+  font-family: var(--oq-font-family);
+  background: var(--oq-color-bg);
+  color: var(--oq-color-text);
+}
+
+.oq-app a {
+  text-decoration: none;
+}
+
+.oq-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.oq-sidebar {
+  width: 300px;
+  background: linear-gradient(180deg, #0f172a 0%, #16223f 100%);
+  color: #f8fafc;
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.oq-main {
+  flex: 1;
+  padding: var(--oq-space-6);
+}
+
+.oq-sidebar-brand h1,
+.oq-main h2,
+.oq-main h3 {
+  font-weight: 800;
+}
+
+.oq-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  color: var(--oq-color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.oq-sidebar .oq-eyebrow {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.top-bar {
+  margin-bottom: var(--oq-space-6);
+  padding: var(--oq-space-5);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: var(--oq-radius-lg);
+  box-shadow: var(--oq-shadow-sm);
+  backdrop-filter: blur(18px);
+}
+
+.oq-content-card,
+.oq-sidebar-card {
+  background: var(--oq-color-surface);
+  border-radius: var(--oq-radius-lg);
+  box-shadow: var(--oq-shadow-sm);
+}
+
+.oq-sidebar-card {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+}
+
+.oq-activity-item {
+  padding: var(--oq-space-4);
+  background: var(--oq-color-surface-alt);
+  border: 1px solid var(--oq-color-border);
+  border-radius: var(--oq-radius-md);
+}
+
+@media (max-width: 991.98px) {
+  .oq-dashboard {
+    flex-direction: column;
+  }
+
+  .oq-sidebar {
+    width: 100%;
+  }
+}
