@@ -105,7 +105,16 @@ textarea::placeholder,
     opacity: 1;
 }
 
-input:focus,
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='url']:focus,
+input[type='number']:focus,
+input[type='date']:focus,
+input[type='time']:focus,
+input[type='datetime-local']:focus,
 textarea:focus,
 select:focus,
 .form-control:focus {
