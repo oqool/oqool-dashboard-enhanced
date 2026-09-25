@@ -130,3 +130,19 @@ a {
 a:hover {
     color: var(--primary-dark);
 }
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    right: 0.5rem;
+    z-index: 1000;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--radius-sm);
+    background: var(--gray-900);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.skip-link:focus-visible {
+    top: 0.5rem;
+}

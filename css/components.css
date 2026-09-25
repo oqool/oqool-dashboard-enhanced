@@ -14,6 +14,15 @@
     box-shadow: var(--shadow-lg);
 }
 
+.card:focus-visible,
+.oq-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--gray-300);
+    box-shadow: var(--shadow-lg);
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
 button,
 .btn,
 .oq-btn,
@@ -46,6 +55,22 @@ input[type='button']:active,
 input[type='submit']:active {
     transform: translateY(0);
     box-shadow: var(--shadow-xs);
+}
+
+button:disabled,
+.btn:disabled,
+.oq-btn:disabled,
+input[type='button']:disabled,
+input[type='submit']:disabled,
+button[disabled],
+.btn[disabled],
+.oq-btn[disabled],
+input[type='button'][disabled],
+input[type='submit'][disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
 }
 
 button:focus-visible,
