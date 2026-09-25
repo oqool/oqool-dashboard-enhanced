@@ -63,7 +63,16 @@ input[type='submit']:hover {
     background: var(--primary-dark);
 }
 
-input,
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='number'],
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
 textarea,
 select,
 .form-control {
@@ -89,7 +98,8 @@ input:focus,
 textarea:focus,
 select:focus,
 .form-control:focus {
-    outline: none;
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
     border-color: var(--primary-light);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
