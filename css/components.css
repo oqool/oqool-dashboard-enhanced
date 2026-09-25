@@ -98,8 +98,14 @@ input:focus,
 textarea:focus,
 select:focus,
 .form-control:focus {
+    border-color: var(--primary-light);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.form-control:focus-visible {
     outline: 2px solid var(--primary-light);
     outline-offset: 2px;
-    border-color: var(--primary-light);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }

@@ -53,3 +53,12 @@
 .animate-bounce {
     animation: bounce 1s ease-in-out infinite;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-pulse,
+    .animate-bounce {
+        animation: none !important;
+    }
+}
