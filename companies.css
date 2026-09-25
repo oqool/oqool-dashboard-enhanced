@@ -1,0 +1,227 @@
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* تنسيقات البطاقات الاحترافية */
+.transition-hover {
+    transition: all 0.3s ease;
+}
+
+.transition-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.bg-primary-soft {
+    background-color: #eef2ff;
+    color: #4338ca;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background-color: #f0fdf4;
+    color: #166534;
+}
+
+/* زر التحكم */
+.btn-outline-primary {
+    border: 1px solid #4338ca;
+    color: #4338ca;
+    background: transparent;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-outline-primary:hover {
+    background: #4338ca;
+    color: white;
+}
+
+
+/* Oqool Appointments Calendar */
+
+.oq-calendar-box {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 18px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.oq-cal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+#calTitle {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2f3542;
+}
+
+.oq-cal-arrow {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #f3f6ff;
+    color: #0d6efd;
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.oq-cal-arrow:hover {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+.oq-weekdays,
+.oq-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 8px;
+}
+
+.oq-weekdays {
+    margin-bottom: 8px;
+}
+
+.oq-weekdays span {
+    font-size: 13px;
+    font-weight: 800;
+    color: #4b5563;
+}
+
+.oq-day {
+    height: 46px;
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2f3542;
+    position: relative;
+    cursor: pointer;
+}
+
+.oq-day.available::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: #0d6efd;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.oq-day.available:hover {
+    background: #eef5ff;
+    color: #0d6efd;
+}
+
+.oq-day.selected {
+    border: 2px solid #0d6efd;
+    color: #0d6efd;
+    background: #eef5ff;
+}
+
+.oq-day.disabled {
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+.oq-time-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-height: 230px;
+    overflow-y: auto;
+    padding: 4px;
+}
+
+.oq-time-btn {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 11px 8px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #2f3542;
+    cursor: pointer;
+}
+
+.oq-time-btn:hover {
+    border-color: #0d6efd;
+    color: #0d6efd;
+    background: #f6f9ff;
+}
+
+.oq-time-btn.selected {
+    border: 2px solid #0d6efd;
+    color: #0d6efd;
+    background: #eef5ff;
+}
+
+#selectedDateText {
+    color: #2f3542;
+    font-size: 16px;
+}
+
+
+
+
+/* Mobile */
+@media (max-width: 576px) {
+    .oq-calendar-box {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .oq-weekdays span {
+        font-size: 11px;
+    }
+
+    .oq-day {
+        height: 40px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .oq-time-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-height: 220px;
+    }
+
+    .oq-time-btn {
+        font-size: 14px;
+        padding: 10px 6px;
+    }
+
+    #calTitle {
+        font-size: 18px;
+    }
+}
