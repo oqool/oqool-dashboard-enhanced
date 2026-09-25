@@ -69,19 +69,13 @@ button:focus-visible,
 .btn:focus-visible,
 .oq-btn:focus-visible,
 input[type='button']:focus-visible,
-input[type='submit']:focus-visible,
-button:focus,
-.btn:focus,
-.oq-btn:focus,
-input[type='button']:focus,
-input[type='submit']:focus {
+input[type='submit']:focus-visible {
     outline: 2px solid var(--primary-light);
     outline-offset: 2px;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-a:focus-visible,
-a:focus {
+a:focus-visible {
     outline: 2px dashed var(--primary-light);
     outline-offset: 2px;
     text-decoration: underline;
@@ -150,12 +144,35 @@ select:focus,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
-.form-control:focus-visible,
-input:focus,
-textarea:focus,
-select:focus,
-.form-control:focus {
+.form-control:focus-visible {
     outline: 2px solid var(--primary-light);
     outline-offset: 2px;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+@supports not selector(:focus-visible) {
+    button:focus,
+    .btn:focus,
+    .oq-btn:focus,
+    input[type='button']:focus,
+    input[type='submit']:focus {
+        outline: 2px solid var(--primary-light);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    a:focus {
+        outline: 2px dashed var(--primary-light);
+        outline-offset: 2px;
+        text-decoration: underline;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus,
+    .form-control:focus {
+        outline: 2px solid var(--primary-light);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
 }
