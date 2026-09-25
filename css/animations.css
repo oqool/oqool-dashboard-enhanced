@@ -53,16 +53,3 @@
 .animate-bounce {
     animation: bounce 1s ease-in-out infinite;
 }
-
-button,
-.btn,
-.oq-btn,
-a,
-.card,
-.oq-card,
-input,
-textarea,
-select,
-.form-control {
-    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
-}
