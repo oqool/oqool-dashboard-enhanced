@@ -1,1 +1,222 @@
-/* Intentionally left lightweight to avoid conflicting with Bootstrap. */
+/* Enterprise motion system with accessibility-first defaults */
+:root {
+  --oq-motion-duration-xs: 120ms;
+  --oq-motion-duration-sm: 180ms;
+  --oq-motion-duration-md: 280ms;
+  --oq-motion-duration-lg: 420ms;
+  --oq-motion-ease: cubic-bezier(0.2, 0, 0.2, 1);
+  --oq-motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.oq-animate-fade-in {
+  animation: oqFadeIn var(--oq-motion-duration-md) var(--oq-motion-ease-out) both;
+}
+
+.oq-animate-slide-up {
+  animation: oqSlideUp var(--oq-motion-duration-md) var(--oq-motion-ease-out) both;
+}
+
+.oq-animate-slide-down {
+  animation: oqSlideDown var(--oq-motion-duration-md) var(--oq-motion-ease-out) both;
+}
+
+.oq-animate-scale-in {
+  animation: oqScaleIn var(--oq-motion-duration-sm) var(--oq-motion-ease) both;
+}
+
+.oq-hover-lift {
+  transition: transform var(--oq-motion-duration-sm) var(--oq-motion-ease), box-shadow var(--oq-motion-duration-sm) var(--oq-motion-ease);
+}
+
+.oq-hover-lift:hover,
+.oq-hover-lift:focus-visible {
+  transform: translateY(-3px);
+}
+
+.oq-notification {
+  animation: oqToastIn var(--oq-motion-duration-md) var(--oq-motion-ease-out) both;
+}
+
+.oq-notification.is-leaving {
+  animation: oqToastOut var(--oq-motion-duration-sm) var(--oq-motion-ease) both;
+}
+
+.modal.fade .modal-dialog {
+  transform: translateY(16px) scale(0.98);
+  transition: transform var(--oq-motion-duration-md) var(--oq-motion-ease-out), opacity var(--oq-motion-duration-md) var(--oq-motion-ease);
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.loading-spinner {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 3px solid color-mix(in srgb, var(--oq-color-primary, #295cff) 18%, transparent);
+  border-top-color: var(--oq-color-primary, #295cff);
+  animation: oqSpin 0.8s linear infinite;
+}
+
+.loading-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.loading-dots > span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: currentColor;
+  animation: oqBounce 900ms var(--oq-motion-ease) infinite;
+}
+
+.loading-dots > span:nth-child(2) {
+  animation-delay: 140ms;
+}
+
+.loading-dots > span:nth-child(3) {
+  animation-delay: 280ms;
+}
+
+.skeleton,
+.skeleton-loader {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  background: linear-gradient(100deg, #edf2fb 20%, #f7faff 35%, #edf2fb 50%);
+  background-size: 220% 100%;
+  animation: oqShimmer 1.3s linear infinite;
+}
+
+.skeleton-text {
+  height: 0.8rem;
+  margin-bottom: 0.45rem;
+}
+
+.skeleton-title {
+  height: 1rem;
+  width: 70%;
+}
+
+.oq-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.oq-ripple::after {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, #ffffff 42%, transparent);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.oq-ripple:active::after {
+  width: 220%;
+  height: 220%;
+  opacity: 1;
+  transition: width var(--oq-motion-duration-lg) ease, height var(--oq-motion-duration-lg) ease, opacity var(--oq-motion-duration-md) ease;
+}
+
+@keyframes oqFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes oqSlideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes oqSlideDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes oqScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes oqToastIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes oqToastOut {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes oqSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes oqBounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.72);
+    opacity: 0.45;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes oqShimmer {
+  to {
+    background-position: -120% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,92 +1,175 @@
 :root {
-  --oq-font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --oq-color-bg: #f4f7fb;
+  --oq-font-family: "Tajawal", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --oq-font-size-base: 1rem;
+  --oq-line-height: 1.5;
+
+  --oq-color-bg: #f3f6fc;
   --oq-color-surface: #ffffff;
   --oq-color-surface-alt: #f8fbff;
-  --oq-color-text: #152033;
-  --oq-color-text-muted: #6b7a90;
-  --oq-color-border: rgba(18, 38, 63, 0.1);
+  --oq-color-surface-strong: #eef3ff;
+  --oq-color-text: #121c2d;
+  --oq-color-text-muted: #64748b;
+  --oq-color-border: #d9e2f0;
+
   --oq-color-primary: #295cff;
-  --oq-color-primary-strong: #1b46d1;
-  --oq-color-sidebar: #0f172a;
-  --oq-shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.08);
-  --oq-shadow-md: 0 18px 40px rgba(15, 23, 42, 0.12);
-  --oq-radius-md: 16px;
-  --oq-radius-lg: 24px;
+  --oq-color-primary-strong: #1a46d2;
+  --oq-color-primary-soft: #e9efff;
+  --oq-color-success: #0f9f6e;
+  --oq-color-warning: #c98512;
+  --oq-color-danger: #ce374e;
+  --oq-color-info: #0c8fbe;
+
+  --oq-color-sidebar: #0e1a33;
+  --oq-color-sidebar-muted: rgba(241, 245, 255, 0.72);
+
+  --oq-radius-sm: 0.625rem;
+  --oq-radius-md: 0.9rem;
+  --oq-radius-lg: 1.25rem;
+  --oq-radius-xl: 1.5rem;
+
+  --oq-shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --oq-shadow-sm: 0 8px 20px rgba(10, 32, 78, 0.08);
+  --oq-shadow-md: 0 14px 30px rgba(10, 32, 78, 0.12);
+  --oq-shadow-lg: 0 22px 46px rgba(10, 32, 78, 0.16);
+
+  --oq-space-1: 0.25rem;
   --oq-space-2: 0.5rem;
   --oq-space-3: 0.75rem;
   --oq-space-4: 1rem;
   --oq-space-5: 1.25rem;
   --oq-space-6: 1.5rem;
+  --oq-space-8: 2rem;
+
+  --oq-transition-fast: 0.18s ease;
+  --oq-transition-base: 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Compatibility aliases for utility files */
+  --primary: var(--oq-color-primary);
+  --success: var(--oq-color-success);
+  --warning: var(--oq-color-warning);
+  --danger: var(--oq-color-danger);
+  --info: var(--oq-color-info);
+  --white: #ffffff;
+  --gray-100: #f1f5f9;
+  --text-primary: var(--oq-color-text);
+  --text-secondary: var(--oq-color-text-muted);
+  --text-muted: #94a3b8;
+  --radius-sm: var(--oq-radius-sm);
+  --radius-md: var(--oq-radius-md);
+  --radius-lg: var(--oq-radius-lg);
+  --radius-xl: var(--oq-radius-xl);
+  --radius-2xl: 1.75rem;
+  --shadow-xs: var(--oq-shadow-xs);
+  --shadow-sm: var(--oq-shadow-sm);
+  --shadow-md: var(--oq-shadow-md);
+  --shadow-lg: var(--oq-shadow-lg);
+  --shadow-xl: 0 26px 56px rgba(10, 32, 78, 0.18);
+  --shadow-2xl: 0 36px 76px rgba(10, 32, 78, 0.22);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
 body.oq-app {
   margin: 0;
+  min-height: 100%;
   font-family: var(--oq-font-family);
-  background: var(--oq-color-bg);
+  font-size: var(--oq-font-size-base);
+  line-height: var(--oq-line-height);
+  background: radial-gradient(circle at top left, #f9fbff 0%, var(--oq-color-bg) 45%, #edf2fb 100%);
   color: var(--oq-color-text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-.oq-app a {
+a {
+  color: inherit;
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--oq-color-primary-strong);
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--oq-color-primary) 35%, transparent);
+  outline-offset: 2px;
+  border-radius: 0.45rem;
+}
+
+.layout,
 .oq-dashboard {
   display: flex;
   min-height: 100vh;
 }
 
+.sidebar,
 .oq-sidebar {
-  width: 300px;
-  background: linear-gradient(180deg, #0f172a 0%, #16223f 100%);
-  color: #f8fafc;
-  border-inline-end: 1px solid rgba(255, 255, 255, 0.08);
+  width: min(320px, 92vw);
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #0b1932 0%, #14274e 100%);
+  color: #eef3ff;
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.04);
 }
 
+main,
+.main-content,
 .oq-main {
   flex: 1;
-  padding: var(--oq-space-6);
-}
-
-.oq-sidebar-brand h1,
-.oq-main h2,
-.oq-main h3 {
-  font-weight: 800;
-}
-
-.oq-eyebrow {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  color: var(--oq-color-text-muted);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.oq-sidebar .oq-eyebrow {
-  color: rgba(255, 255, 255, 0.68);
+  min-width: 0;
+  padding: clamp(1rem, 2.2vw, 1.75rem);
 }
 
 .top-bar {
   margin-bottom: var(--oq-space-6);
   padding: var(--oq-space-5);
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: var(--oq-radius-lg);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--oq-radius-xl);
   box-shadow: var(--oq-shadow-sm);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(14px);
 }
 
 .oq-content-card,
-.oq-sidebar-card {
+.oq-sidebar-card,
+.card {
   background: var(--oq-color-surface);
+  border: 1px solid color-mix(in srgb, var(--oq-color-border) 85%, white);
   border-radius: var(--oq-radius-lg);
   box-shadow: var(--oq-shadow-sm);
 }
 
 .oq-sidebar-card {
   background: rgba(255, 255, 255, 0.08);
-  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f8faff;
+}
+
+.oq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--oq-space-2);
+  margin-bottom: var(--oq-space-2);
+  color: var(--oq-color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.oq-sidebar .oq-eyebrow,
+.sidebar .oq-eyebrow {
+  color: rgba(248, 252, 255, 0.72);
 }
 
 .oq-activity-item {
@@ -96,12 +179,59 @@ body.oq-app {
   border-radius: var(--oq-radius-md);
 }
 
+.mobile-menu-btn {
+  position: fixed;
+  inset-inline-start: 1rem;
+  inset-block-end: 1rem;
+  z-index: 1060;
+  border: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: none;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--oq-color-primary), #5f85ff);
+  box-shadow: var(--oq-shadow-md);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (max-width: 991.98px) {
+  .layout,
   .oq-dashboard {
     flex-direction: column;
   }
 
+  .sidebar,
   .oq-sidebar {
     width: 100%;
+  }
+
+  .mobile-menu-btn {
+    display: grid;
+  }
+}
+
+@media (max-width: 640px) {
+  main,
+  .main-content,
+  .oq-main {
+    padding: 0.85rem;
+  }
+
+  .top-bar {
+    padding: 0.95rem;
+    border-radius: var(--oq-radius-lg);
   }
 }
