@@ -19,12 +19,7 @@ header.hero {
 }
 
 .clickable,
-button,
-.btn,
-.oq-btn,
-a,
-.card,
-.oq-card {
+a {
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
 }
 
