@@ -61,16 +61,14 @@ a:focus-visible {
 
 .btn-primary,
 .oq-btn-primary,
-button.primary,
-input[type='submit'] {
+button.primary {
     background: var(--primary);
     color: var(--white);
 }
 
 .btn-primary:hover,
 .oq-btn-primary:hover,
-button.primary:hover,
-input[type='submit']:hover {
+button.primary:hover {
     background: var(--primary-dark);
 }
 
