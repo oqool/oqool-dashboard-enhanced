@@ -1,0 +1,90 @@
+.hero-gradient,
+.hero,
+header.hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #06b6d4 100%);
+    color: var(--white);
+}
+
+.subtle-gradient,
+.panel-light,
+.section-soft {
+    background: linear-gradient(to right, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.dark-gradient,
+.panel-dark,
+.section-dark {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: var(--white);
+}
+
+.clickable {
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 1.02rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .card,
+    .oq-card {
+        padding: 1rem;
+    }
+
+    button,
+    .btn,
+    .oq-btn,
+    input[type='button'],
+    input[type='submit'] {
+        min-height: 44px;
+        padding: 0.75rem 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.35;
+    }
+
+    .card,
+    .oq-card {
+        border-radius: var(--radius-md);
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 1.07rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    button,
+    .btn,
+    .oq-btn,
+    input[type='button'],
+    input[type='submit'],
+    input,
+    textarea,
+    select {
+        font-size: 1rem;
+    }
+}
